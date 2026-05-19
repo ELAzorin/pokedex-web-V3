@@ -191,3 +191,45 @@ h1 {
 .tipo-box.activo {
   outline: 3px solid black;
 }
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .tipo-box {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .pokedex {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .pokemon img {
+    height: 90px;
+  }
+
+  .pokemon h2 {
+    font-size: 14px;
+  }
+
+  .pokemon p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .leyenda {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+}
