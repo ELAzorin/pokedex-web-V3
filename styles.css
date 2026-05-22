@@ -13,13 +13,7 @@ h1 {
 
 /* HEADER / MENÚ */
 
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 0;
-}
+
 
 .menu button {
   padding: 8px 15px;
@@ -585,54 +579,39 @@ button.boton-todos.activo {
 
 @media (max-width: 768px) {
   .menu {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 
     padding: 10px;
     max-width: 340px;
     margin: 10px auto;
+    justify-items: center;
   }
 
   .menu li {
     width: 100%;
-    list-style: none;
   }
 
   .menu button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 15px;
     border-radius: 15px;
     font-weight: bold;
-    background: #e3350d;
-    color: white;
-    border: 2px solid #1e90ff;
-
   }
-  
-  .menu button:hover {
-    transform: scale(1.05);
-  }
-
 }
 
 .menu {
+  list-style: none;
   display: flex;
   justify-content: center;
-
   gap: 10px;
+  padding: 0;
 
-  padding: 8px 12px;
-  border-radius: 25px;
-
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-
-  background: rgba(0, 0, 0, 0.35);
-
-  margin: 10px auto;
+  flex-wrap: wrap;
 }
+
 
 nav {
   text-align: center;
