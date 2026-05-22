@@ -1553,11 +1553,16 @@
               }
             }
           }
+          
+          const tiposHTML = info
+            ? info.tipo.split(" / ").map(t => `<span class="mini-tipo">${t}</span>`).join("")
+            : "";
 
           card.innerHTML = `
             <img src="imagenes/${numero}.png" alt="${nombre}">
             <h2>${nombre}</h2>
             <p>#${numero}</p>
+            <div class="mini-tipos">${tiposHTML}</div>
           `;
 
           card.addEventListener("click", () => {
@@ -1686,10 +1691,15 @@ function pintarCardPokemon(nombre, numero, index) {
     }
   }
 
+  const tiposHTML = info
+    ? info.tipo.split(" / ").map(t => `<span class="mini-tipo">${t}</span>`).join("")
+    : "";
+
   card.innerHTML = `
     <img src="imagenes/${numero}.png" alt="${nombre}">
     <h2>${nombre}</h2>
     <p>#${numero}</p>
+    <div class="mini-tipos">${tiposHTML}</div>
   `;
 
   card.addEventListener("click", () => {
@@ -1762,11 +1772,11 @@ function pintarCardPokemon(nombre, numero, index) {
       const btnShiny = document.getElementById("btn-shiny");
 
       btnShiny.classList.remove("activo");
+      modalContent.classList.remove("shiny-activo");
 
       // Evento botón shiny
       btnShiny.onclick = () => {
         esShinyActivo = !esShinyActivo;
-
         if (esShinyActivo) {
           img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${parseInt(numero)}.png`;
           btnShiny.classList.add("activo");
@@ -1774,6 +1784,7 @@ function pintarCardPokemon(nombre, numero, index) {
           img.src = `imagenes/${numero}.png`;
           btnShiny.classList.remove("activo");
         }
+        modalContent.classList.toggle("shiny-activo", esShinyActivo);
       };
 
       document.getElementById("modal-nombre").textContent = nombre;
