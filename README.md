@@ -1,115 +1,121 @@
-# 🧾 Pokédex Web v6
+# 🧩 Pokédex Web Interactiva
 
-Aplicación web interactiva de una Pokédex desarrollada con **HTML, CSS y JavaScript puro**.
-
-Este proyecto muestra los Pokémon de las generaciones 1, 2 y 3, permitiendo filtrarlos por tipo, visualizarlos en detalle y navegar de forma responsive tanto en escritorio como en móvil.
-
----
-
-## 🚀 Demo
-
-👉 https://elazorin.github.io/pokedex-web-V6/
+Proyecto personal de Pokédex desarrollado con HTML, CSS y JavaScript puro.  
+Incluye múltiples generaciones, filtros avanzados, animaciones y funcionalidades interactivas.
 
 ---
 
-## 🎯 Funcionalidades
+## 🚀 Características
 
-### 🧩 Generaciones
-- ✅ Cambio dinámico entre generaciones (Gen 1, Gen 2, Gen 3)
-- ✅ Carga automática de Pokémon con imágenes locales
+✅ Pokédex completa hasta Generación 8 (905 Pokémon)  
+✅ Búsqueda por nombre o número  
+✅ Filtro por tipo  
+✅ Cambio entre generaciones  
+✅ Contador dinámico de resultados  
+✅ Modal con información detallada  
+✅ Colores dinámicos según tipo de Pokémon  
+✅ Animaciones al cargar y cambiar generación  
+✅ Botón de Pokémon aleatorio 🎲  
+✅ Modo Champions (filtrado competitivo)  
+✅ Evoluciones dentro del modal  
+✅ Diseño responsive (móvil y escritorio)
 
-### 🔍 Filtrado por tipo
-- ✅ Botones interactivos por tipo (Fuego, Agua, Planta, etc.)
-- ✅ Filtro dinámico en tiempo real
-- ✅ Botón “Todos” para resetear resultados
-- ✅ Resaltado del tipo seleccionado
+---
 
-### 🎨 Diseño visual
-- ✅ Colores automáticos por tipo
-- ✅ Cartas con doble tipo dividido (mitad/mitad)
-- ✅ Hover con animación
-- ✅ Fondo degradado moderno
-- ✅ Estilo tipo aplicación
+## 🎮 Tecnologías usadas
 
-### 🧾 Modal informativo
-- ✅ Imagen ampliada del Pokémon
-- ✅ Nombre y número de Pokédex
-- ✅ Tipo
-- ✅ Descripción
-- ✅ Cierre al hacer click fuera
-- ✅ Compatible con móviles
-
-### 📱 Responsive (muy importante)
-- ✅ Distribución en grid adaptable
-- ✅ 3 Pokémon por fila en móvil
-- ✅ Menú de tipos en 3 filas
-- ✅ Modal optimizado para pantallas pequeñas
-- ✅ Interacción táctil mejorada
+- HTML5
+- CSS3 (Flexbox + Grid + animaciones)
+- JavaScript (Vanilla)
 
 ---
 
 ## 📂 Estructura del proyecto
+📁 pokedex/
+├── 📄 index.html
+├── 🎨 styles.css
+├── 📁 imagenes/
+│   ├── 001.png
+│   ├── 002.png
+│   └── ...
+└── 📄 README.md
+---
 
-pokedex-web-v6/
-│
-├── index.html
-├── styles.css
-├── README.md
-└── imagenes/
-├── 001.png
-├── 002.png
-├── ...
-└── 386.png
+## 🔍 Funcionalidades destacadas
+
+### 🔎 Buscador inteligente
+Permite buscar por nombre o número (#001, 25, etc.)
+
+### 🎨 Tipos con colores dinámicos
+Cada Pokémon cambia de color según su tipo:
+- Fuego → rojo
+- Agua → azul
+- Planta → verde
+- etc.
+
+### 🧠 Modal interactivo
+Al hacer click en un Pokémon:
+- Imagen grande
+- Nombre y número
+- Tipo
+- Descripción
+- Evoluciones
+
+### 🎲 Pokémon aleatorio
+Botón que selecciona un Pokémon visible al azar, hace scroll automático y abre su ficha.
+
+### 🏆 Modo Champions
+Filtro especial que muestra solo Pokémon disponibles en Pokémon Champions.
 
 ---
 
-## 🧠 Tecnologías utilizadas
+## 📱 Responsive
 
-- HTML5  
-- CSS3 (Grid + Flexbox)  
-- JavaScript (DOM manipulation)  
+Diseñado para funcionar bien en:
 
----
-
-## ⚙️ Características técnicas destacadas
-
-- ✅ Creación dinámica de elementos con JavaScript
-- ✅ Eventos seguros con `addEventListener`
-- ✅ Uso de objetos para almacenamiento de datos (`infoPokemon`)
-- ✅ Lógica de separación de tipos (`split`)
-- ✅ Sistema modular escalable a más generaciones
+- PC 💻  
+- Tablet 📱  
+- Móvil 📲  
 
 ---
 
-## 💡 Posibles mejoras futuras
+## 📌 Estado del proyecto
 
-- 🔍 Buscador en tiempo real (por nombre)
-- 🎨 Modo oscuro / claro con toggle
-- 🎮 Animaciones avanzadas (fade / zoom)
-- 🧾 Datos reales desde PokéAPI
-- 📊 Estadísticas (HP, ataque, defensa…)
-- ❤️ Sistema de favoritos
-- 🔄 Filtros múltiples por tipo
+✅ Funcional  
+✅ Completo hasta Gen 8  
+✅ Fácil de ampliar (Gen 9 o más features)
+
+---
+
+## 💡 Mejoras futuras
+
+- ⭐ Sistema de favoritos
+- 📊 Estadísticas de combate
+- ⚔️ Debilidades por tipo
+- 🌙 Modo claro / oscuro
+- 🔊 Sonidos al interactuar
+- 📦 Separación completa de JS en módulos
 
 ---
 
 ## 👨‍💻 Autor
 
-- Antonio Azorín
+**Antonio Azorín Miralles**
+
+Proyecto personal de aprendizaje y práctica con JavaScript.
 
 ---
 
-## 📌 Notas
+## 📸 Preview
 
-Este proyecto ha evolucionado progresivamente, incorporando:
-
-- mejoras de UI/UX  
-- optimización para móviles  
-- interactividad avanzada  
-- diseño más cercano a aplicaciones reales  
+_(Aquí puedes añadir capturas de pantalla de tu web)_
 
 ---
 
-## 📖 Licencia
+## 📝 Licencia
 
-Proyecto personal con fines educativos.
+Uso libre con fines educativos o personales.
+
+---
+
+✨ Proyecto creado con pasión por Pokémon y el desarrollo web.
