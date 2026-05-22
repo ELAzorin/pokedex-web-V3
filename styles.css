@@ -579,27 +579,21 @@ button.boton-todos.activo {
 
 @media (max-width: 768px) {
   .menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 10px;
-
-    padding: 10px;
     max-width: 340px;
     margin: 10px auto;
-    justify-items: center;
   }
 
   .menu li {
+    list-style: none;
     width: 100%;
-    display: contents;
   }
 
   .menu button {
     width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    border-radius: 15px;
-    font-weight: bold;
+    display: block;
   }
 }
 
