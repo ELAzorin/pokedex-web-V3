@@ -886,3 +886,20 @@ nav {
   from { box-shadow: 0 0 5px gold; }
   to { box-shadow: 0 0 15px gold; }
 }
+
+/* ✅ Ajuste móvil botón shiny */
+@media (max-width: 600px) {
+
+  .btn-shiny {
+    top: 8px;
+    left: 8px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 18px;
+
+    z-index: 30; /* más alto por si se tapa */
+  }
+
+}
