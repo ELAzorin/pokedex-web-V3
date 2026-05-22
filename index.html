@@ -1567,6 +1567,11 @@
 
         document.querySelectorAll(".menu button").forEach(btn => btn.classList.remove("activo"));
 
+        const btnChampions = document.getElementById("btn-champions");
+        if (btnChampions) {
+          btnChampions.classList.remove("activo");
+        }
+
         if (event) {
           event.target.classList.add("activo");
         } else {
