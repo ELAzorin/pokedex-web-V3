@@ -582,3 +582,30 @@ button.boton-todos.activo {
     height: 220px;
   }
 }
+
+@media (max-width: 768px) {
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 10px;
+    max-width: 95%;
+    margin: auto;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu button {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
