@@ -194,6 +194,47 @@ nav {
 }
 
 /* =============================== */
+/* BOTÓN CHAMPIONS */
+/* =============================== */
+
+.boton-champions {
+  min-width: 140px;
+  padding: 10px 22px;
+
+  border: 3px solid gold;
+  border-radius: 25px;
+
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+
+  background: linear-gradient(180deg, #111, #000);
+  color: gold;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.boton-champions:hover {
+  transform: scale(1.07);
+  background: linear-gradient(180deg, gold, #c99700);
+  color: black;
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.45);
+}
+
+.boton-champions.activo {
+  background: gold;
+  color: black;
+  border-color: white;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.8);
+}
+
+/* =============================== */
 /* LEYENDA DE TIPOS */
 /* =============================== */
 
@@ -236,7 +277,9 @@ nav {
 
 .tipo-box:active,
 .menu button:active,
-.boton-todos:active {
+.boton-todos:active,
+.boton-random:active,
+.boton-champions:active {
   transform: scale(0.95);
 }
 
@@ -461,7 +504,7 @@ nav {
   max-width: 90%;
   max-height: 85%;
 
-  overflow: auto;
+  overflow: hidden;
 
   animation: aparecerModal 0.25s ease;
   transition: background 0.25s ease, color 0.25s ease;
@@ -490,7 +533,7 @@ nav {
 
   font-size: 26px;
   cursor: pointer;
-  z-index: 20;
+  z-index: 80;
 
   color: inherit;
 
@@ -504,15 +547,18 @@ nav {
   color: red;
 }
 
-/* Imagen del modal */
+/* Imagen principal del modal */
 
-.modal img {
+#modal-img {
   width: 260px;
   height: 260px;
   max-width: 90%;
+
   object-fit: contain;
-  margin: 10px auto 15px;
+
   display: block;
+
+  margin: 24px auto 15px;
 
   filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.35));
   animation: imagenModalEntrada 0.35s ease;
@@ -527,6 +573,76 @@ nav {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+/* =============================== */
+/* BOTÓN SHINY */
+/* =============================== */
+
+#btn-shiny,
+.btn-shiny {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  padding: 0;
+
+  background: gold !important;
+  color: black !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 90;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+#btn-shiny:hover,
+.btn-shiny:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 16px gold;
+}
+
+#btn-shiny.activo,
+.btn-shiny.activo {
+  background: black !important;
+  color: gold !important;
+  box-shadow: 0 0 15px gold;
+  animation: brilloShiny 1s infinite alternate;
+}
+
+@keyframes brilloShiny {
+  from {
+    box-shadow: 0 0 5px gold;
+  }
+
+  to {
+    box-shadow: 0 0 18px gold;
   }
 }
 
@@ -555,7 +671,7 @@ nav {
   align-items: center;
   justify-content: center;
 
-  z-index: 10;
+  z-index: 70;
 
   transition:
     background 0.2s ease,
@@ -604,32 +720,51 @@ nav {
 /* =============================== */
 
 @media (max-width: 768px) {
-  /* Menú generaciones 3x3 */
+  /* Menú generaciones con scroll horizontal */
   .menu {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    justify-content: flex-start !important;
+    align-items: center;
 
     gap: 10px;
 
     width: 92vw;
-    max-width: 360px;
+    max-width: 92vw;
 
-    padding: 12px;
+    padding: 10px 12px;
     margin: 12px auto;
 
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
     box-sizing: border-box;
+    scrollbar-width: none;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;
   }
 
   .menu li {
-    width: 100%;
+    flex: 0 0 auto;
+    list-style: none;
   }
 
   .menu button {
-    width: 100%;
-    padding: 12px 6px;
-    font-size: 15px;
+    flex: 0 0 auto;
+
+    min-width: 78px;
+    padding: 11px 14px;
+
+    font-size: 14px;
     border-radius: 15px;
-    text-align: center;
+
+    white-space: nowrap;
   }
 
   /* Tipos */
@@ -683,7 +818,8 @@ nav {
   }
 
   .boton-todos,
-  .boton-random {
+  .boton-random,
+  .boton-champions {
     width: 80%;
     max-width: 260px;
   }
@@ -697,11 +833,29 @@ nav {
   .modal-content {
     width: 85%;
     padding: 20px;
+    overflow: hidden;
   }
 
-  .modal img {
+  #modal-img {
     width: 220px;
     height: 220px;
+    margin-top: 34px;
+  }
+
+  #btn-shiny,
+  .btn-shiny {
+    top: 10px;
+    left: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    font-size: 18px;
+
+    z-index: 100;
   }
 
   .flecha {
@@ -737,169 +891,14 @@ nav {
   .tipo-box:hover,
   .menu button:hover,
   .boton-todos:hover,
-  .boton-random:hover {
+  .boton-random:hover,
+  .boton-champions:hover {
     transform: none;
     box-shadow: none;
   }
-}
 
-/* =============================== */
-/* MENÚ GENERACIONES CON SCROLL EN MÓVIL */
-/* =============================== */
-
-@media (max-width: 768px) {
-  .menu {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-
-    justify-content: flex-start !important;
-    align-items: center;
-
-    gap: 10px;
-
-    width: 92vw;
-    max-width: 92vw;
-
-    padding: 10px 12px;
-    margin: 12px auto;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-    box-sizing: border-box;
+  #btn-shiny:hover,
+  .btn-shiny:hover {
+    transform: none;
   }
-
-  .menu li {
-    flex: 0 0 auto;
-    list-style: none;
-  }
-
-  .menu button {
-    flex: 0 0 auto;
-
-    min-width: 78px;
-    padding: 11px 14px;
-
-    font-size: 14px;
-    border-radius: 15px;
-
-    white-space: nowrap;
-  }
-
-  /* Ocultar barra de scroll en Chrome/Safari/Edge */
-  .menu::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Ocultar barra de scroll en Firefox */
-  .menu {
-    scrollbar-width: none;
-  }
-}
-
-/* BOTÓN CHAMPIONS */
-
-.boton-champions {
-  min-width: 140px;
-  padding: 10px 22px;
-
-  border: 3px solid gold;
-  border-radius: 25px;
-
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-
-  background: linear-gradient(180deg, #111, #000);
-  color: gold;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.boton-champions:hover {
-  transform: scale(1.07);
-  background: linear-gradient(180deg, gold, #c99700);
-  color: black;
-  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.45);
-}
-
-.boton-champions.activo {
-  background: gold;
-  color: black;
-  border-color: white;
-  box-shadow: 0 0 14px rgba(255, 215, 0, 0.8);
-}
-
-@media (max-width: 768px) {
-  .boton-champions {
-    width: 80%;
-    max-width: 260px;
-  }
-}
-
-.btn-shiny {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-
-  width: 40px;
-  height: 40px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: gold;
-  color: black;
-
-  font-size: 20px;
-  cursor: pointer;
-
-  z-index: 20;
-
-  transition: 0.2s;
-}
-
-.btn-shiny:hover {
-  transform: scale(1.15);
-}
-
-.btn-shiny.activo {
-  background: black;
-  color: gold;
-  box-shadow: 0 0 12px gold;
-}
-
-.btn-shiny.activo {
-  animation: brillo 1s infinite alternate;
-}
-
-@keyframes brillo {
-  from { box-shadow: 0 0 5px gold; }
-  to { box-shadow: 0 0 15px gold; }
-}
-
-/* ✅ Ajuste móvil botón shiny */
-@media (max-width: 600px) {
-
-  .btn-shiny {
-    top: 8px;
-    left: 8px;
-
-    width: 36px;
-    height: 36px;
-
-    font-size: 18px;
-
-    z-index: 30; /* más alto por si se tapa */
-  }
-
 }
