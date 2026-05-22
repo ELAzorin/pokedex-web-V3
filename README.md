@@ -108,7 +108,7 @@ Proyecto personal de aprendizaje y práctica con JavaScript.
 
 ## 📸 Preview
 
-_(Aquí puedes añadir capturas de pantalla de tu web)_
+https://elazorin.github.io/pokedex-web-V6/
 
 ---
 
